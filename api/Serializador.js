@@ -1,3 +1,4 @@
+const { application } = require('express')
 const ValorNaoSuportado = require('./erros/ValorNaoSuportado')
 
 class Serializador {
@@ -12,4 +13,9 @@ class Serializador {
 
     throw new ValorNaoSuportado(this.contentType)
   }
+}
+
+module.exports = {
+  Serializador: Serializador,
+  formatosAceitos: ['application/json']
 }
